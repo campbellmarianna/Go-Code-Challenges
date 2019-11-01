@@ -29,20 +29,13 @@ import "fmt"
 // create a function that takes in a string
 func shareWith(name string) {
 	var empty = ""
-
-	// check if the string is empty
 	if empty == name {
-		fmt.Println("One for you, one for me.")
-	} else {
-		fmt.Printf("One for %v, one for me.\n",name)
+		name = "you"
 	}
-		// print message with name value
-	// otherwise print message
+	fmt.Printf("One for %v, one for me.\n",name)
 }
 
 func main() {
-	var t = "Alice"
-	// y := T{""}
+	var t = ""
 	shareWith(t)
-	
 }
