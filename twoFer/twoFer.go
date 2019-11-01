@@ -1,0 +1,48 @@
+/*
+Prompt:
+Two-fer or 2-fer is short for two for one. One for you and one for me.
+
+Given a name, return a string with the message:
+
+One for X, one for me.
+Where X is the given name.
+
+However, if the name is missing, return the string:
+
+One for you, one for me.
+Here are some examples:
+
+Name	String to return
+Alice	   One for Alice, one for me.
+Bob	     One for Bob, one for me.
+         One for you, one for me.
+Zaphod	 One for Zaphod, one for me.
+*/
+// Input: string name or nothing
+// Output: String 
+// Solution Idea:
+package main
+
+import "fmt"
+
+
+// create a function that takes in a string
+func shareWith(name string) {
+	var empty = ""
+
+	// check if the string is empty
+	if empty == name {
+		fmt.Println("One for you, one for me.")
+	} else {
+		fmt.Printf("One for %v, one for me.\n",name)
+	}
+		// print message with name value
+	// otherwise print message
+}
+
+func main() {
+	var t = "Alice"
+	// y := T{""}
+	shareWith(t)
+	
+}
