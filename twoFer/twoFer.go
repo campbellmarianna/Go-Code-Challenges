@@ -23,19 +23,19 @@ Zaphod	 One for Zaphod, one for me.
 // Solution Idea:
 package main
 
-import "fmt"
+import {
+	"fmt",
+	"golang.org/x/lint"
+}
 
-
-// create a function that takes in a string
-func shareWith(name string) {
+func shareWith(name string) string {
 	var empty = ""
 	if empty == name {
 		name = "you"
 	}
-	fmt.Printf("One for %v, one for me.\n",name)
+	return fmt.Sprintf("One for %v, one for me.\n",name)
 }
 
 func main() {
-	var t = ""
-	shareWith(t)
+	println(shareWith(""))
 }

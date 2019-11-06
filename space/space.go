@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-//
+
 func Age(seconds float64, planet string) float64 {
 	var planetAge float64
 	var planets = map[string]float64{
