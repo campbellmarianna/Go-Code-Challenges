@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 )
 
 /* First Iteration
@@ -39,4 +38,16 @@ func Proverb(rhyme []string) []string {
   // Print and append final rhyme
 	output = append(output, fmt.Sprintf("And all for the want of a %s.", rhyme[0]))
 	return output
+}
+
+func main() {
+	var rhyme []string
+	rhyme[0] = "nail"
+	rhyme[1] =  "shoe"
+	rhyme[2] = "horse"
+	rhyme[3] = "rider"
+	rhyme[4] = "message"
+	rhyme[5] = "battle"
+	rhyme[6] = "kingdom"
+	fmt.Println(Proverb(rhyme))
 }
