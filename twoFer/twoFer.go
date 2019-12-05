@@ -23,10 +23,10 @@ Zaphod	 One for Zaphod, one for me.
 // Solution Idea:
 package main
 
-import {
-	"fmt",
-	"golang.org/x/lint"
-}
+import (
+	"fmt"
+	// "golang.org/x/lint"
+)
 
 func shareWith(name string) string {
 	var empty = ""
