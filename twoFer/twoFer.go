@@ -19,21 +19,18 @@ Bob	     One for Bob, one for me.
 Zaphod	 One for Zaphod, one for me.
 */
 // Input: string name or nothing
-// Output: String 
+// Output: String
 // Solution Idea:
 package main
 
-import (
-	"fmt"
-	// "golang.org/x/lint"
-)
+import "fmt"
 
 func shareWith(name string) string {
 	var empty = ""
 	if empty == name {
 		name = "you"
 	}
-	return fmt.Sprintf("One for %v, one for me.\n",name)
+	return fmt.Sprintf("One for %v, one for me.\n", name)
 }
 
 func main() {

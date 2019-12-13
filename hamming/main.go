@@ -6,11 +6,11 @@ import (
 
 // Distance returns the Hamming of two DNA
 func Distance(a, b string) (int, error) {
-	// lengths of DNA a and b are unequals return nil
+	// identifylengths of DNA a and b are unequals
 	if len(a) != len(b) {
 		return 0, fmt.Errorf("The lengths of DNA are different - a: %d, b %d", len(a), len(b))
 	}
-	// return how many differences there are	
+	// return how many differences in DNA there are	
 	cnt := 0
 	for i := 0; i < len(a); i++ {
 		if a[i] != b[i] {
@@ -20,9 +20,8 @@ func Distance(a, b string) (int, error) {
 	return cnt, nil
 }
 
-
-func main(){
+func main() {
 	var a = "ABCCB"
 	var b = "BBCAB"
-	fmt.Println(Distance(a,b))
+	fmt.Println(Distance(a, b))
 }
