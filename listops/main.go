@@ -95,12 +95,27 @@ func foldr(fn funcreducer, list []int, accumulator int) int {
 
 // Reverse func given a list, return a list with all the original items, but in reversed order
 func reverse(list []int) []int {
+	fmt.Println("Running reverse function")
 	forward := 0
 	backward := -1
 	temp := 0
-	for forward < length(list) && backward <= -length(list) {
+	// Chnage strategy because go doesn't have negative indexes like Python for simplicity and prevention of bugs
+	for forward < length(list)/2 && backward >= -(length(list)/2) {
+		fmt.Println("before temp", temp) // 0
+		temp = list[forward]
+		fmt.Println("after temp", temp)                         // 1
+		fmt.Println("before back in the front ", list[forward]) // 1
+		list[forward] = list[length(list+ backward)backward]
+		fmt.Println("after back in the front ", list[forward])  // 7
+		fmt.Println("before front is now back", list[backward]) // 7
+		list[backward] = temp
+		fmt.Println("before front is now back", list[backward]) // 1
+		// go to next pair of values
+		forward++
+		backward
 
 	}
+	return list
 
 }
 
@@ -125,10 +140,12 @@ func main() {
 	// fn := func(x, y int) int { return x + y }
 	// accumulator := 5
 	// fmt.Println(foldl(fn, list, accumulator))
-	list := []int{1, 2, 3, 4}
-	fn := func(x, y int) int { return x + y }
-	accumulator := 5
-	fmt.Println(foldr(fn, list, accumulator))
+	// list := []int{1, 2, 3, 4}
+	// fn := func(x, y int) int { return x + y }
+	// accumulator := 5
+	// fmt.Println(foldr(fn, list, accumulator))
+	list := []int{1, 3, 5, 7}
+	fmt.Println(reverse(list))
 }
 
 func printSlice(s string, x []int) {
