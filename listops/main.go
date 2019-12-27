@@ -99,7 +99,8 @@ func reverse(list []int) []int {
 	forward := 0
 	backward := -1
 	temp := 0
-	// Chnage strategy because go doesn't have negative indexes like Python for simplicity and prevention of bugs
+	// Change strategy because go doesn't have negative indexes like Python for simplicity and prevention of bugs
+  // https://golangcookbook.com/chapters/strings/reverse/
 	for forward < length(list)/2 && backward >= -(length(list)/2) {
 		fmt.Println("before temp", temp) // 0
 		temp = list[forward]
