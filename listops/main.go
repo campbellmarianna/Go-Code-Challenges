@@ -94,33 +94,16 @@ func foldr(fn funcreducer, list []int, accumulator int) int {
 }
 
 // Reverse func given a list, return a list with all the original items, but in reversed order
+// Solution inspired by: https://golangcookbook.com/chapters/strings/reverse/
 func reverse(list []int) []int {
-	fmt.Println("Running reverse function")
-	forward := 0
-	backward := -1
-	temp := 0
-	// Change strategy because go doesn't have negative indexes like Python for simplicity and prevention of bugs
-  // https://golangcookbook.com/chapters/strings/reverse/
-	for forward < length(list)/2 && backward >= -(length(list)/2) {
-		fmt.Println("before temp", temp) // 0
-		temp = list[forward]
-		fmt.Println("after temp", temp)                         // 1
-		fmt.Println("before back in the front ", list[forward]) // 1
-		list[forward] = list[length(list+ backward)backward]
-		fmt.Println("after back in the front ", list[forward])  // 7
-		fmt.Println("before front is now back", list[backward]) // 7
-		list[backward] = temp
-		fmt.Println("before front is now back", list[backward]) // 1
-		// go to next pair of values
-		forward++
-		backward
-
+	// get the length of the given list
+	listLen := length(list)
+	// loop while index at the front of the list is less than the index at the right of the list because if the front index was larger we would reverse values incorrectly. Along the way increment the front and deincrement the right index of the list so that we are switching assiociated values
+	for i, j := 0, listLen-1; i < j; i, j = i+1, j-1 {
+		list[i], list[j] = list[j], list[i]
 	}
 	return list
-
 }
-
-// Problem Link: https://exercism.io/my/solutions/7141754fe059438790dd75474ffe65e8
 
 func main() {
 	// array1 := []int{1, 2}
@@ -145,8 +128,8 @@ func main() {
 	// fn := func(x, y int) int { return x + y }
 	// accumulator := 5
 	// fmt.Println(foldr(fn, list, accumulator))
-	list := []int{1, 3, 5, 7}
-	fmt.Println(reverse(list))
+	listEx := []int{1, 3, 5, 7}
+	fmt.Println(reverse(listEx))
 }
 
 func printSlice(s string, x []int) {
